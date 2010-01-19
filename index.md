@@ -11,6 +11,8 @@ The ABS BS API is available via XML requests served over HTTP using [RESTful res
 
 Because the ABS BS API is accessible via HTTP, you may use a regular browser to view all GET requests for the API.  We recommend using Firefox for this, since it will happily render XML in the browser.  For many URLs in the ABS BS application, you may simply append .xml to the URL to retrieve the corresponding API response for that URL.  For example, /versions/niv/books becomes /versions/niv/books.xml to retrieve the XML version.
 
+You may also retrieve JSON responses from the ABS BS application by appending .json to the request URL.  For example, /versions/niv/books becomes /versions/niv/books.json to retrieve the JSON version.
+
 ## Authentication
 
 All requests to the ABS API are authenticated via an existing ABS user account -- you do not need a special API user account to access the API.  All users have full read access to all Bible passages.  For user-specific content such as account information, tags, and notes, users have full read and write access, but only to their own content.
@@ -47,7 +49,9 @@ If the read request is successful, the XML response will include the status code
 
 You may use the ABS API to create and update content that you, yourself, have created.  This includes account information, tags, and notes.  To perform these write requests, you will need to send an XML request to the ABS API along with the relevant HTTP verb for your action.  Because of these requirements, it is not easy to interact with the ABS API using your browser to send these write requests.  Instead, we recommend you use a command line tool like [curl][curl] to play around with this portion of the ABS API interface.
 
-To create new resources via the ABS API, send the resource encoded as XML.  Be sure to also send the "Content-type: application/xml" header with your request so that the ABS API can properly recognize it as an XML request.
+To create new resources via the ABS API, send the resource encoded as XML or JSON.  **Be sure to also send the correct Content-type header with your request.**  This will be either "Content-type: application/xml" for XML requests or "Content-type: application/javascript" for JSON requests.  Data should be sent to the ABS API as the raw POST or PUT body.                            
+
+Examples:
 
 To create a new tag via the ABS API, do this:
 
