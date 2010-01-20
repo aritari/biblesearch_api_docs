@@ -13,10 +13,6 @@ These are the books of the Bible belonging to the requested version.  Books belo
 
 Returns a list of all books for all versions.
 
-### Get /versions/#{version_id}/books.xml
-
-Returns a list of all books for the specified version.
-
 ## Show
 
 ### GET /books/1.xml

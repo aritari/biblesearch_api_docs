@@ -13,6 +13,10 @@ Versions are the specific editions of the Bible such as the New International Ve
 
 Returns a list of all available versions.
 
+### Get /versions/#{version_id}/books.xml
+
+Returns a list of all books for the specified version.
+
 ## List with Language
 
 ### GET /versions.xml?language=eng
