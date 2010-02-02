@@ -27,3 +27,7 @@ Returns the specific chapter with ID 1.
 
 You may pass an *include* query parameter with value *verses* with your request to retrieve a list of each verse belonging to the specified chapter.
 
+### GET /chapters/1.xml?include=book
+
+You may pass an *include* query parameter with value *book* with your request, to enclose your chapter resource in its applicable book resource.
+
